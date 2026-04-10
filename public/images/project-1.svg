@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" fill="#DBEAFE"/>
+  <rect x="120" y="110" width="960" height="480" rx="24" fill="#EFF6FF" stroke="#93C5FD" stroke-width="4"/>
+  <text x="600" y="330" text-anchor="middle" fill="#1E3A8A" font-size="54" font-family="Arial">Project Image 1</text>
+</svg>
