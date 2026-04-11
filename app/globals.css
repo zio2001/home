@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+}
+
 body {
-  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+}
+
+.card {
+  @apply rounded-2xl bg-white p-6 shadow-md ring-1 ring-slate-100;
 }
