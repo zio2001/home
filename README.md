@@ -41,3 +41,30 @@ npm run start
 - `fanCafe`
 - `profilePdf`
 - `profileImage`
+
+## GitHub 머지 충돌 빠른 해결
+
+PR에서 `This branch has conflicts that must be resolved`가 뜨면, 로컬에서 아래 순서로 해결하세요.
+
+```bash
+git fetch origin
+git checkout <작업브랜치>
+git merge origin/main
+```
+
+충돌이 발생하면 프로젝트 제공 스크립트로 일괄 처리할 수 있습니다.
+
+```bash
+# 현재 브랜치 변경사항(리디자인 결과)을 우선 유지
+scripts/resolve_conflicts.sh ours
+
+# 또는 main 쪽 내용을 우선 유지
+scripts/resolve_conflicts.sh theirs
+```
+
+그 다음:
+
+```bash
+git commit -m "Resolve merge conflicts"
+git push
+```
