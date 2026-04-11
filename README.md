@@ -72,7 +72,8 @@ git push
 충돌이 계속 반복되면 아래 원클릭 스크립트를 사용하세요.
 
 ```bash
-# 현재 브랜치에서 origin/main을 가져와 머지 + 충돌 자동 처리 + 커밋까지 진행
+# 현재 브랜치에서 origin/main을 가져와 -X ours 전략으로 머지 시도
+# 실패 시 알려진 충돌 파일 자동 처리 + 커밋까지 진행
 scripts/sync_pr_with_main.sh ours main
 git push
 ```

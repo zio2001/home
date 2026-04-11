@@ -36,12 +36,12 @@ git fetch origin
 
 echo "[2/4] Merge origin/$BASE_BRANCH into current branch..."
 set +e
-git merge --no-ff "origin/$BASE_BRANCH"
+git merge --no-ff -X "$STRATEGY" "origin/$BASE_BRANCH"
 MERGE_EXIT=$?
 set -e
 
 if [[ $MERGE_EXIT -ne 0 ]]; then
-  echo "Merge conflict detected. Applying '$STRATEGY' strategy for known files..."
+  echo "Merge conflict still detected. Applying '$STRATEGY' strategy for known files..."
   scripts/resolve_conflicts.sh "$STRATEGY"
 
   if git diff --name-only --diff-filter=U | grep -q .; then
