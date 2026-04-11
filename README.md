@@ -1,41 +1,74 @@
-# Beginner Portfolio Website
+# 최준호 강사 공식 홈페이지 (Next.js + TypeScript + Tailwind)
 
-초보자도 쉽게 수정할 수 있도록 `page.tsx`는 섹션 컴포넌트를 불러오기만 하도록 구성했습니다.
+기관/기업/교육 담당자가 빠르게 신뢰를 느끼고 문의할 수 있도록 구성한 단일 페이지 공식 소개 사이트입니다.
 
-## 구조
+## 1) 파일 구조
 
-- `app/page.tsx`: 전체 페이지 조립 (컴포넌트 import 및 순서 관리)
-- `components/HomeSection.tsx`: 이름 + 한 줄 소개
-- `components/AboutSection.tsx`: 자기소개 문단
-- `components/ProjectsSection.tsx`: 프로젝트 카드 3개
-- `components/ContactSection.tsx`: 이메일/전화번호
-- `components/NavBar.tsx`: 상단 메뉴(Home, About, Projects, Contact)
+```bash
+app/page.tsx
+components/NavBar.tsx
+components/HeroSection.tsx
+components/AboutSection.tsx
+components/ValueSection.tsx
+components/ProgramSection.tsx
+components/PortfolioSection.tsx
+components/ReviewSection.tsx
+components/ContactSection.tsx
+components/Footer.tsx
+```
 
-## 어디를 수정하면 되나요?
+- `app/page.tsx`: 섹션 컴포넌트 조립만 담당
+- `components/*`: 섹션별 UI 및 텍스트/데이터 관리
 
-### 1) 이름과 한 줄 소개
-- 파일: `components/HomeSection.tsx`
-- `홍길동`, 소개 문장을 원하는 내용으로 바꾸면 됩니다.
+## 2) 어디를 수정하면 되나요?
 
-### 2) 자기소개
+초보자도 텍스트만 바꿔 운영할 수 있도록 각 컴포넌트 상단에 수정용 객체/배열이 정리되어 있습니다.
+
+### 강사명/메인 문구
+- 파일: `components/HeroSection.tsx`
+- `heroContent` 객체의 `name`, `mainCopy`, `description` 수정
+
+### 강사 소개/철학
 - 파일: `components/AboutSection.tsx`
-- 문단 텍스트를 본인 소개로 수정하세요.
+- `aboutData` 객체 수정
 
-### 3) 프로젝트 카드(3개 유지)
-- 파일: `components/ProjectsSection.tsx`
-- 상단의 `projects` 배열에서 `title`, `description`, `image`를 수정하세요.
-- **카드 개수는 3개를 유지**하면 현재 레이아웃이 가장 깔끔합니다.
+### 핵심 가치
+- 파일: `components/ValueSection.tsx`
+- `values` 배열에서 카드별 `title`, `description`, `icon` 수정
 
-### 4) 연락처
+### 강의 프로그램
+- 파일: `components/ProgramSection.tsx`
+- `programs` 배열에 프로그램 정보를 수정/추가
+
+### 포트폴리오(기관 사례)
+- 파일: `components/PortfolioSection.tsx`
+- `portfolioItems` 배열 수정
+
+### 후기
+- 파일: `components/ReviewSection.tsx`
+- `reviews` 배열 수정
+
+### 연락처/문의 링크
 - 파일: `components/ContactSection.tsx`
-- 이메일(`mailto:`), 전화번호(`tel:`)를 본인 정보로 교체하세요.
+- `contactInfo`의 이메일, 전화번호, 오픈채팅 링크 수정
 
-## 스타일
+### 하단 푸터 정보
+- 파일: `components/Footer.tsx`
+- `footerInfo` 수정
 
-- Tailwind CSS 유틸리티 클래스를 사용했습니다.
-- 여백/색상/글자 크기 조정은 각 컴포넌트의 `className`만 수정하면 됩니다.
+## 3) 실행 방법
 
-## 모바일 대응
+프로젝트 루트에서 아래 순서대로 실행하세요.
 
-- 모든 섹션은 모바일 우선으로 작성되어 작은 화면에서도 읽기 쉽게 구성되어 있습니다.
-- 프로젝트 카드는 모바일 1열, 태블릿 이상에서 다열 레이아웃으로 변경됩니다.
+```bash
+npm install
+npm run dev
+```
+
+브라우저에서 `http://localhost:3000` 접속 후 확인할 수 있습니다.
+
+## 4) 유지보수 팁
+
+- 섹션 순서를 바꾸고 싶다면 `app/page.tsx`에서 컴포넌트 순서만 조정하면 됩니다.
+- 카드 개수는 배열에 객체를 추가/삭제하면 자동으로 반영됩니다.
+- Tailwind 클래스만 수정해도 색상/여백/폰트 조정이 가능합니다.

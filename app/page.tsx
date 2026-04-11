@@ -1,17 +1,25 @@
 import NavBar from "@/components/NavBar";
-import HomeSection from "@/components/HomeSection";
+import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ProjectsSection from "@/components/ProjectsSection";
+import ValueSection from "@/components/ValueSection";
+import ProgramSection from "@/components/ProgramSection";
+import PortfolioSection from "@/components/PortfolioSection";
+import ReviewSection from "@/components/ReviewSection";
 import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
+    <main className="min-h-screen bg-[#f8f7f4] text-slate-800">
       <NavBar />
-      <HomeSection />
+      <HeroSection />
       <AboutSection />
-      <ProjectsSection />
+      <ValueSection />
+      <ProgramSection />
+      <PortfolioSection />
+      <ReviewSection />
       <ContactSection />
+      <Footer />
     </main>
   );
 }
