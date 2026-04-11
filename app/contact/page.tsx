@@ -1,5 +1,5 @@
-import ContactContent from "@/components/contact/ContactContent";
+import { redirect } from 'next/navigation';
 
-export default function ContactPage() {
-  return <ContactContent />;
+export default function LegacyPage() {
+  redirect('/');
 }

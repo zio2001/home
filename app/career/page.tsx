@@ -1,5 +1,5 @@
-import CareerContent from "@/components/career/CareerContent";
+import { redirect } from 'next/navigation';
 
-export default function CareerPage() {
-  return <CareerContent />;
+export default function LegacyPage() {
+  redirect('/');
 }

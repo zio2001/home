@@ -1,5 +1,5 @@
-import ProgramsContent from "@/components/programs/ProgramsContent";
+import { redirect } from 'next/navigation';
 
-export default function ProgramsPage() {
-  return <ProgramsContent />;
+export default function LegacyPage() {
+  redirect('/');
 }

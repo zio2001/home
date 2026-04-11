@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white p-6 shadow-lg shadow-slate-200/60 ring-1 ring-slate-100;
+  }
+
+  .section-label {
+    @apply text-xs font-bold tracking-[0.18em] text-brand-purple;
+  }
+
+  .section-heading h2 {
+    @apply mt-2 text-3xl font-black text-slate-900 sm:text-4xl;
+  }
+
+  .section-heading p {
+    @apply mt-3 max-w-3xl leading-relaxed text-slate-600;
+  }
+
+  .btn-primary {
+    @apply rounded-xl bg-brand-blue px-4 py-3 text-center font-bold text-white shadow-md shadow-blue-200 transition hover:-translate-y-0.5 hover:bg-blue-700;
+  }
+
+  .btn-secondary {
+    @apply rounded-xl bg-brand-purple px-4 py-3 text-center font-bold text-white shadow-md shadow-purple-200 transition hover:-translate-y-0.5 hover:bg-purple-700;
+  }
+
+  .btn-accent {
+    @apply rounded-xl bg-pink-600 px-4 py-3 text-center font-bold text-white shadow-md shadow-pink-200 transition hover:-translate-y-0.5 hover:bg-pink-700;
+  }
+
+  .btn-cafe {
+    @apply rounded-xl bg-emerald-600 px-4 py-3 text-center font-bold text-white shadow-md shadow-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-700;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-blue focus:ring-2 focus:ring-blue-100;
+  }
 }

@@ -1,5 +1,5 @@
-import ServicesContent from "@/components/services/ServicesContent";
+import { redirect } from 'next/navigation';
 
-export default function ServicesPage() {
-  return <ServicesContent />;
+export default function LegacyPage() {
+  redirect('/');
 }
