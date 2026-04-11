@@ -85,3 +85,19 @@ scripts/rebase_pr_on_main.sh main
 ```
 
 리베이스가 성공하면 브랜치를 자동 `--force-with-lease` 푸시하고, GitHub PR을 새로고침하면 머지 가능 상태로 바뀝니다.
+
+## 근본 해결(반복 충돌 루프 끊기)
+
+기존 PR에서 같은 충돌이 계속 반복되면, 오래된 PR 브랜치를 계속 살리는 대신 **새 브랜치를 main 기준으로 재생성**하는 것이 가장 안정적입니다.
+
+```bash
+# 현재(충돌 많은) 브랜치에서 실행
+scripts/recreate_pr_branch.sh clean-redesign main
+```
+
+이 스크립트는 다음을 자동으로 수행합니다.
+- `origin/main`에서 새 브랜치 생성
+- 현재 브랜치 변경분을 squash merge로 1개 커밋으로 정리
+- 새 브랜치 push
+
+그 후에는 기존 PR을 닫고, 새 브랜치로 PR을 다시 열면 충돌 반복 가능성이 크게 줄어듭니다.
