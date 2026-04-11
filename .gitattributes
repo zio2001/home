@@ -1,0 +1,8 @@
+# Reduce manual merge conflicts for documentation/style/config text files
+README.md merge=union
+app/**/*.css merge=union
+app/**/*.tsx merge=union
+components/**/*.tsx merge=union
+lib/**/*.ts merge=union
+package.json merge=union
+public/*.pdf merge=union
