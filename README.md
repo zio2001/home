@@ -68,3 +68,11 @@ scripts/resolve_conflicts.sh theirs
 git commit -m "Resolve merge conflicts"
 git push
 ```
+
+충돌이 계속 반복되면 아래 원클릭 스크립트를 사용하세요.
+
+```bash
+# 현재 브랜치에서 origin/main을 가져와 머지 + 충돌 자동 처리 + 커밋까지 진행
+scripts/sync_pr_with_main.sh ours main
+git push
+```
