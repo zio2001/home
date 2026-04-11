@@ -77,3 +77,11 @@ git push
 scripts/sync_pr_with_main.sh ours main
 git push
 ```
+
+PR 머지 버튼이 계속 비활성화되면(충돌 목록이 계속 동일할 때) 아래 리베이스 스크립트를 실행하세요.
+
+```bash
+scripts/rebase_pr_on_main.sh main
+```
+
+리베이스가 성공하면 브랜치를 자동 `--force-with-lease` 푸시하고, GitHub PR을 새로고침하면 머지 가능 상태로 바뀝니다.
